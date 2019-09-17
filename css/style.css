@@ -476,10 +476,10 @@ form button.instruct {
 
 .interactive .to-pause .icons {
     position: relative;
-    width: 10px;
+    width: 16px;
     padding-left: 15px;
     display: inline-block;
-    height: 13px;
+    height: 11px;
 }
 
 .interactive .to-pause .icons:before {
@@ -489,18 +489,18 @@ form button.instruct {
     top: 50%;
     transform: translateY(-50%);
     height: 100%;
-    width: 2px;
+    width: 3px;
     background-color: #fff;
 }
 
 .interactive .to-pause .icons:after {
     content: '';
     position: absolute;
-    right: 6px;
+    right: 8px;
     top: 50%;
     transform: translateY(-50%);
     height: 100%;
-    width: 2px;
+    width: 3px;
     background-color: #fff;
 }
 
