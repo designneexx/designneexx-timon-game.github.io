@@ -489,7 +489,7 @@ form button.instruct {
     top: 50%;
     transform: translateY(-50%);
     height: 100%;
-    width: 2px;
+    width:  2px;
     background-color: #fff;
 }
 
