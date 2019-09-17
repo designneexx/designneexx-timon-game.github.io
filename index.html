@@ -180,7 +180,7 @@
 
 	$(function() {
 	
-		var numb_start = $(".price").text(); // Получаем начальное число
+		var numb_start = $(".game-count").text(); // Получаем начальное число
 		
 		$({numberValue: numb_start}).animate({numberValue: 1000}, {
 		
@@ -189,7 +189,7 @@
 			
 			step: function(val) {
 			
-				$(".price").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+				$(".game-count").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
 				
 			}
 			
