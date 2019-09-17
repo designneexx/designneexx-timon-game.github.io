@@ -504,6 +504,17 @@ form button.instruct {
     background-color: #fff;
 }
 
+.interactive .to-resume .icons {
+    position: relative;
+    width: 0;
+    height: 0;
+    padding-left: 12px;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #fff;
+}
+
 .game-container {
     min-width: 100vw;
     min-height: 100vh;
@@ -516,5 +527,5 @@ form button.instruct {
 .essence {
     position: absolute;
     bottom: 20px;
-    
 }
+
