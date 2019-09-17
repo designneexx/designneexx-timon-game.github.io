@@ -476,10 +476,10 @@ form button.instruct {
 
 .interactive .to-pause .icons {
     position: relative;
-    width: 18px;
-    padding-left: 15px;
+    width: 15px;
+    padding-left: 10px;
     display: inline-block;
-    height: 13px;
+    height: 12px;
 }
 
 .interactive .to-pause .icons:before {
@@ -489,30 +489,36 @@ form button.instruct {
     top: 50%;
     transform: translateY(-50%);
     height: 100%;
-    width:  2px;
+    width: 3px;
     background-color: #fff;
 }
 
 .interactive .to-pause .icons:after {
     content: '';
     position: absolute;
-    right: 7px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     height: 100%;
-    width: 2px;
+    width: 3px;
     background-color: #fff;
 }
 
 .interactive .to-resume .icons {
     position: relative;
+    width: 10px;
+    height: 10px;
+    padding-left: 10px;
+    display: inline-block;
+}
+
+.interactive .to-resume .icons:before {
+    content: "";
     width: 0;
     height: 0;
-    padding-left: 12px;
-    display: inline-block;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid #fff;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 13px solid #fff;
 }
 
 .game-container {
