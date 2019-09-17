@@ -175,21 +175,21 @@
             </div>
         </div>
     </div>
-    <script src="Media/js/jquery-3.4.1.min.js"></script>
-    <script>
-
-	$('.game-count').each(function () {
-  var $this = $(this);
-  jQuery({ Counter: 200 }).animate({ Counter: $this.text() }, {
-    duration: 1000,
-    easing: 'swing',
-    step: function () {
-      $this.text(Math.ceil(this.Counter));
-    }
-  });
-});
-	
-</script>
+	<script>
+		const timerElement = document.querySelector(".timer .game-count");
+		const childs = [...timerElement.childNodes];
+		function changeTimer(value) {
+			const seconds = (value % 60).toString().padStart(2, "0");
+			const minutes = Math.floor(value / 60).padStart(2, "0");
+			const timeText = `${minutes}${seconds}`;
+			const resultTime = childs.reduce((prev,curr,i) => {
+				return prev += `<span>${seconds[i]}</span>`;
+			}, "");
+			console.log(resultText);
+		}
+		
+		changeTimer(137);
+	</script>
 
     <script src="js/engine.js"></script>
 </body>
