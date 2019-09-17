@@ -468,12 +468,13 @@ form button.instruct {
     background-repeat: no-repeat;
 }
 
-.interactive .to-pause {
+.interactive .to-pause .icons {
     position: relative;
-    padding-right: 50px;
+    width: 10px;
+    padding-left: 15px;
 }
 
-.interactive .to-pause:before {
+.interactive .to-pause .icons:before {
     content: '';
     position: absolute;
     right: 0;
@@ -484,7 +485,7 @@ form button.instruct {
     background-color: #fff;
 }
 
-.interactive .to-pause:after {
+.interactive .to-pause .icons:after {
     content: '';
     position: absolute;
     right: 6px;
