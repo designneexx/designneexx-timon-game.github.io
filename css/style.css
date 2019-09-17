@@ -504,6 +504,12 @@ form button.instruct {
     background-color: #fff;
 }
 
+.interactive .to-resume {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .interactive .to-resume .icons {
     position: relative;
     width: 12px;
