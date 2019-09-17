@@ -175,27 +175,19 @@
             </div>
         </div>
     </div>
-    <script src="/Media/js/jquery-3.4.1.min.js"></script>
+    <script src="Media/js/jquery-3.4.1.min.js"></script>
     <script>
 
-	$(function() {
-	
-		var numb_start = $(".game-count").text(); // Получаем начальное число
-		
-		$({numberValue: numb_start}).animate({numberValue: 1000}, {
-		
-			duration: 500, // Продолжительность анимации, где 500 = 0,5 одной секунды, то есть 500 миллисекунд 
-			easing: "linear",
-			
-			step: function(val) {
-			
-				$(".game-count").html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
-				
-			}
-			
-		});
-		
-	});
+	$('.game-count').each(function () {
+  var $this = $(this);
+  jQuery({ Counter: 200 }).animate({ Counter: $this.text() }, {
+    duration: 1000,
+    easing: 'swing',
+    step: function () {
+      $this.text(Math.ceil(this.Counter));
+    }
+  });
+});
 	
 </script>
 
