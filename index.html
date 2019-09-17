@@ -5,14 +5,176 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Game Finish Timon</title>
+    <link rel="shortcut icon" href="/Media/timon_pumba.png">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="game container" id="camera">
+    <div class="modals">
+        <div class="modal-window">
+            <div class="modal-header">
+                <div class="close">
+                    X
+                </div>
+            </div>
+            <div class="container container-modal">
+                <video
+                        controls
+                        src="/Media/Timon%20_%20Pumbaa%20-%20Title%20Song%20%5BEnglish%20Version%5D.mp4"
+                        class="video-site"
+                        width="550"
+                ></video>
+            </div>
+        </div>
+    </div>
+    <div class="screens">
+        <div class="screen" id="startScreen">
+            <header class="header-site">
+                <div class="container">
+                    <div class="logo">
+                        <img src="/Media/timon-pumbaa-wall-9.jpg" alt="Timon & Pumba" width="48">
+                        <span>Timon & Pubma Game</span>
+                    </div>
+                    <div class="user">Вы вошли, как Гость</div>
+                </div>
+            </header>
+            <div class="container">
+                <div class="group-container">
+                    <h1 class="heading">Вход в игру</h1>
+                    <form action="/index.php" method="post">
+                        <div class="group">
+                            <input type="text" class="input-text" id="username" required/>
+                            <label class="label-input" for="username">Придумайте ник</label>
+                            <div class="bar"></div>
+                            <div class="btn-container">
+                                <button class="btn">Начать игру</button>
+                                <button class="btn instruct">Инструкция</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
+            </div>
+        </div>
+        <div class="screen">
+            <header>
+                <div class="container">
+                    <div class="logo">
+                        <img src="/Media/timon-pumbaa-wall-9.jpg" alt="Timon & Pumba">
+                    </div>
+                    <div class="hp game-states"><span>Здоровье:</span> 100</div>
+                    <div class="timer game-states"><span>Время:</span> 00:00</div>
+                    <div class="count game-states"><span>Очки:</span> 0</div>
+                    <div class="interactive">
+                        <button class="btn to-pause">На паузу</button>
+                    </div>
+                </div>
+            </header>
+            <div class="game-container">
+                <div class="essence player">
+                    <div class="state-info">You</div>
+                </div>
+                <div class="essence wall">
+                    <div class="essence caterpillar">
+                        <div class="state-info">Hill</div>
+                    </div>
+                </div>
+                <div class="essence hyena">
+                    <div class="state-info">Danger</div>
+                </div>
+            </div>
+        </div>
+        <div class="screen">
+            <header>
+                <div class="container">
+                    <div class="logo">
+                        <img src="/Media/timon-pumbaa-wall-9.jpg" alt="Timon & Pumba">
+                    </div>
+                </div>
+            </header>
+            <div class="container">
+                <table class="table-site">
+                    <thead>
+                        <tr>
+                            <th>Игрок</th>
+                            <th>Место</th>
+                            <th>Время (сек)</th>
+                            <th>Очки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr class="active">
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <script src="engine.js"></script>
+    <script src="js/engine.js"></script>
 </body>
 </html>
