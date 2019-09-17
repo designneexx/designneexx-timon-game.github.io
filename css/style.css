@@ -468,10 +468,18 @@ form button.instruct {
     background-repeat: no-repeat;
 }
 
+.interactive .to-pause {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .interactive .to-pause .icons {
     position: relative;
     width: 10px;
     padding-left: 15px;
+    display: inline-block;
+    height: 13px;
 }
 
 .interactive .to-pause .icons:before {
