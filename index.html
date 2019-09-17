@@ -177,7 +177,7 @@
     </div>
 	<script>
 		const timerElement = document.querySelector(".timer .game-count");
-		const childs = [...timerElement.childNodes[0]];
+		const childs = [...timerElement.childNodes[0].data];
 		function changeTimer(value) {
 			const seconds = (value % 60).toString().padStart(2, "0");
 			const minutes = Math.floor(value / 60).toString().padStart(2, "0");
@@ -188,7 +188,7 @@
 			console.log(resultTime);
 		}
 		
-		//changeTimer(137);
+		changeTimer(137);
 	</script>
 
     <script src="js/engine.js"></script>
