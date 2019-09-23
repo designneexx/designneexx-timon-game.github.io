@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Game Finish Timon</title>
-    <link rel="shortcut icon" href="/Media/timon_pumba.png">
+    <link rel="shortcut icon" href="Media/timon_pumba.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,19 +20,19 @@
             <div class="container container-modal">
                 <video
                         controls
-                        src="/Media/Timon%20_%20Pumbaa%20-%20Title%20Song%20%5BEnglish%20Version%5D.mp4"
+                        src="Media/Timon%20_%20Pumbaa%20-%20Title%20Song%20%5BEnglish%20Version%5D.mp4"
                         class="video-site"
                         width="550"
                 ></video>
             </div>
         </div>
     </div>
-    <div class="screens" style="transform: translateX(-100%)">
+    <div class="screens" style="transform: translateX(-200%)">
         <div class="screen" id="startScreen">
             <header class="header-site">
                 <div class="container">
                     <div class="logo">
-                        <img src="/Media/timon-pumbaa-wall-9.jpg" alt="Timon & Pumba" width="48">
+                        <img src="Media/timon-pumbaa-wall-9.jpg" alt="Timon & Pumba" width="48">
                         <span>Timon & Pubma Game</span>
                     </div>
                     <div class="user">Вы вошли, как Гость</div>
@@ -59,7 +59,7 @@
         <div class="screen">
             <header class="header-site">
                 <div class="container">
-                    <div class="logo">
+                    <div class="logo game-states" tabindex="0">
                         <div class="user">R</div>
                         <span class="continue">amazan</span>
                     </div>
@@ -72,28 +72,32 @@
                 </div>
             </header>
             <div class="game-container">
-                <div class="essence player">
-                    <div class="state-info">You</div>
-                </div>
-                <div class="essence wall">
-                    <div class="essence caterpillar">
-                        <div class="state-info">Hill</div>
+                <div class="game-bgr">
+                    <div class="essence player">
+                        <div class="state-info">You</div>
                     </div>
-                </div>
-                <div class="essence hyena">
-                    <div class="state-info">Danger</div>
+                    <div class="essence wall">
+                        <div class="essence caterpillar">
+                            <div class="state-info hill">Hill</div>
+                        </div>
+                    </div>
+                    <div class="essence hyena">
+                        <div class="state-info danger">Danger</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="screen">
-            <header>
+        <div class="screen" id="loseScreen">
+            <header class="header-site">
                 <div class="container">
                     <div class="logo">
-                        <img src="/Media/timon-pumbaa-wall-9.jpg" alt="Timon & Pumba">
+                        <img src="Media/timon-pumbaa-wall-9.jpg" alt="Timon & Pumba" width="48">
+                        <span>Timon & Pumba Game</span>
                     </div>
+                    <div class="user">Вы вошли, как Ramazan</div>
                 </div>
             </header>
-            <div class="container">
+            <div class="container group-container">
                 <table class="table-site">
                     <thead>
                         <tr>
@@ -176,19 +180,7 @@
         </div>
     </div>
 	<script>
-		const timerElement = document.querySelector(".timer .game-count");
-		const childs = [...timerElement.childNodes[0].data];
-		function changeTimer(value) {
-			const seconds = (value % 60).toString().padStart(2, "0");
-			const minutes = Math.floor(value / 60).toString().padStart(2, "0");
-			const timeText = `${minutes}:${seconds}`;
-			const resultTime = childs.reduce((prev,curr,i) => {
-				return prev += `<span>${seconds[i]}</span>`;
-			}, "");
-			console.log(resultTime);
-		}
-		
-		changeTimer(137);
+
 	</script>
 
     <script src="js/engine.js"></script>

@@ -31,6 +31,8 @@
     padding: 0;
     box-sizing: border-box;
     border: none;
+    outline: none;
+    user-select: none;
 }
 
 body, html {
@@ -208,6 +210,12 @@ input[type="text"]:focus ~ label,  input[type="text"]:valid ~ label{
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
 }
 
 .header-site {
@@ -230,6 +238,7 @@ input[type="text"]:focus ~ label,  input[type="text"]:valid ~ label{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 210px;
 }
 
 .group-container {
@@ -258,8 +267,8 @@ input[type="text"]:focus ~ label,  input[type="text"]:valid ~ label{
 }
 
 .header-site .logo img, .header-site .logo .user {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     object-fit: cover;
     border-radius: 50%;
     margin-right: 15px;
@@ -271,7 +280,7 @@ input[type="text"]:focus ~ label,  input[type="text"]:valid ~ label{
     background-color: #FF9800;
     color: #fff;
     text-transform: uppercase;
-    font-size: 23px;
+    font-size: 21px;
     font-family: "Roboto Medium", sans-serif;
     font-weight: 500;
     text-align: center;
@@ -282,7 +291,7 @@ input[type="text"]:focus ~ label,  input[type="text"]:valid ~ label{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-right: 10px;
+    margin-right: 8px;
     transition: all .3s ease-in-out;
     position: relative;
     cursor: pointer;
@@ -305,7 +314,8 @@ input[type="text"]:focus ~ label,  input[type="text"]:valid ~ label{
     font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100px;
+    max-width: 100%;
+    letter-spacing: 5px;
 }
 
 .header-site .logo .user:before {
@@ -420,7 +430,7 @@ input[type="text"]:focus ~ label,  input[type="text"]:valid ~ label{
     align-items: center;
     min-width: 100vw;
     height: 100vh;
-    transition: transform .3s ease-in-out;
+    transition: transform .3s cubic-bezier(.5,.5,.5,1.25);
 }
 
 .screen {
@@ -536,7 +546,16 @@ form button.instruct {
     width: 100%;
     height: 100%;
     position: relative;
-    backround-color: #000;
+    overflow: hidden;
+}
+
+.game-bgr {
+    background-image: url("../Media/Фоны/1932758.png");
+    background-size: 5000px;
+    background-position: bottom;
+    width: 5000px;
+    height: 100%;
+    position: relative;
 }
 
 .essence {
@@ -544,3 +563,195 @@ form button.instruct {
     bottom: 20px;
 }
 
+.game-states svg {
+    width: 17px;
+    vertical-align: middle;
+    margin-right: 7px;
+}
+
+.header-site .game-states {
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header-site .game-states:hover::before {
+    opacity: .075;
+}
+
+.header-site .game-states:active::before {
+    opacity: .32;
+}
+
+.header-site .game-states:focus::before {
+    opacity: .2;
+}
+
+.header-site .game-states:hover:focus::before {
+    opacity: .3;
+}
+
+
+.header-site .game-states:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.header-site .game-states:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 50%;
+    width: 32px;
+    height: 32px;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #fff;
+    opacity: 0;
+    border-radius: 50%;
+    transition:  opacity 1s, transform .5s;
+
+}
+
+.header-site .game-states:active::after {
+    opacity: .32;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0s;
+}
+
+.essence {
+    position: absolute;
+    bottom: 90px;
+}
+
+.player {
+    width: 250px;
+    height: 200px;
+    background-color: rgba(0,0,0,1);
+    left: 0;
+}
+
+.wall {
+    width: 50px;
+    height: 100px;
+    background-color: rgba(0,0,0,1);
+    left: 300px;
+}
+
+.caterpillar {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1d1d1d;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+}
+
+.hyena {
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    left: 500px;
+}
+
+.state-info {
+    position: absolute;
+    top: -45px;
+    color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    font-size: 27px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.state-info.hill {
+    background-color: #009688;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.23), 0 3px 6px rgba(0,0,0,.16);
+}
+
+.state-info.danger {
+    background-color: #f44336;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.23), 0 3px 6px rgba(0,0,0,.16);
+}
+
+#loseScreen {
+    background-image: url("../Media/Фоны/trees_palms_jungle_127762_3840x2096.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#loseScreen .group-container {
+    padding: 30px;
+    overflow: hidden;
+}
+
+#loseScreen table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 3px 6px rgba(0,0,0,.23), 0 3px 6px rgba(0,0,0,.16);
+    border-radius: 5px;
+}
+
+
+#loseScreen table th {
+    font-weight: 600;
+    color: #aaa;
+    font-size: 15px;
+    text-align: right;
+    padding: 15px;
+    font-family: "Roboto", sans-serif;
+}
+
+
+#loseScreen table thead th:first-child {
+    text-align: left;
+}
+
+#loseScreen table td {
+    color: #0d0d0d;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: right;
+    padding: 15px;
+    font-family: "Roboto", sans-serif;
+}
+
+#loseScreen table tbody td:first-child {
+    text-align: left;
+}
+
+
+#loseScreen table tr {
+    border: 1px solid;
+    border-color: #ccc;
+}
+
+#loseScreen table thead tr:first-child {
+    border-color: #eeee;
+}
