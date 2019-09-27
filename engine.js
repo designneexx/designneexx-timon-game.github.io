@@ -331,6 +331,8 @@ class Wall extends BaseEssence {
     this.el.classList.add("wall");
 
     this.updateElem();
+
+    setTimeout(() => this.destroy(), 15000);
   }
 }
 

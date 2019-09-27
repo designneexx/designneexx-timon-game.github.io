@@ -73,6 +73,13 @@ body {
     position: relative;
 }
 
+.btn:disabled {
+    cursor: default;
+    background-color: #9e9e9e;
+    pointer-events: none;
+    color: #eeeeee;
+}
+
 .btn::before {
     content: "";
     position: absolute;
@@ -471,6 +478,28 @@ form button.instruct {
     background: #9C27B0;
 }
 
+.game-states .game-count span {
+    transition: all .3s ease-in-out;
+    display: inline-block;
+}
+
+.game-states .game-count .to-up {
+    opacity: 0;
+    transform: translateY(-35px);
+}
+
+
+.game-states .game-count .to-down {
+    opacity: 0;
+    transform: translateY(35px);
+}
+
+.game-states .game-count .active {
+    opacity: 1;
+    transform: none;
+}
+
+
 #startScreen {
     background-image: url("../Media/timon-pumbaa-wall-9.jpg");
     background-size: cover;
@@ -646,8 +675,8 @@ form button.instruct {
 }
 
 .wall {
-    width: 50px;
-    height: 100px;
+    width: 210px;
+    height: 140px;
     background-color: rgba(0,0,0,1);
     left: 300px;
 }
@@ -655,8 +684,8 @@ form button.instruct {
 .caterpillar {
     position: absolute;
     bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
     background-color: #1d1d1d;
     border-radius: 4px;
     width: 40px;
@@ -706,26 +735,31 @@ form button.instruct {
 
 #loseScreen .group-container {
     padding: 30px;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    position: relative;
 }
 
 #loseScreen table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    border: 1px solid #f0f0f0;
-    box-shadow: 0 3px 6px rgba(0,0,0,.23), 0 3px 6px rgba(0,0,0,.16);
-    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.12);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 }
 
 
 #loseScreen table th {
-    font-weight: 600;
-    color: #aaa;
-    font-size: 15px;
+    font-weight: normal;
+    font-size: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 56px;
     text-align: right;
-    padding: 15px;
-    font-family: "Roboto", sans-serif;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #9e9e9e;
+    position: relative;
+    background-color: inherit;
 }
 
 
@@ -734,13 +768,17 @@ form button.instruct {
 }
 
 #loseScreen table td {
-    color: #0d0d0d;
-    font-size: 15px;
-    font-weight: 400;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 48px;
     text-align: right;
-    padding: 15px;
-    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: inherit;
 }
+
 
 #loseScreen table tbody td:first-child {
     text-align: left;
@@ -748,10 +786,32 @@ form button.instruct {
 
 
 #loseScreen table tr {
-    border: 1px solid;
-    border-color: #ccc;
+    border-bottom: 1px solid #e0e0e0;
+    color: rgba(0, 0, 0, 0.87);
+    height: 48px;
+    transition: background-color .2s ease;
+}
+
+#loseScreen table tbody tr:hover {
+    background-color: #eee;
 }
 
 #loseScreen table thead tr:first-child {
     border-color: #eeee;
+}
+
+#loseScreen .btn {
+    margin-top: 20px;
+}
+
+.section-title {
+    position: absolute;
+    bottom: calc(100% + 5px);
+    color: #fff;
+}
+
+.section-title .heading {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 800;
 }

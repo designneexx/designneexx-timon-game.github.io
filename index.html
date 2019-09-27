@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="modals">
-        <div class="modal-window">
+    <div class="modals" id="modal">
+        <div class="modal-window" id="tutorial">
             <div class="modal-header">
-                <div class="close">
+                <div class="close" id="closeModal">
                     X
                 </div>
             </div>
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="screens" style="transform: translateX(-200%)">
+    <div class="screens" id="screens">
         <div class="screen" id="startScreen">
             <header class="header-site">
                 <div class="container">
@@ -41,14 +41,14 @@
             <div class="container">
                 <div class="group-container">
                     <h1 class="heading">Вход в игру</h1>
-                    <form action="/index.php" method="post">
+                    <form action="/index.php" method="post" id="form">
                         <div class="group">
                             <input type="text" class="input-text" id="username" required/>
                             <label class="label-input" for="username">Придумайте ник</label>
                             <div class="bar"></div>
                             <div class="btn-container">
-                                <button class="btn">Начать игру</button>
-                                <button class="btn instruct">Инструкция</button>
+                                <button class="btn" disabled id="startBtn">Начать игру</button>
+                                <button class="btn instruct" id="openTutor">Инструкция</button>
                             </div>
                         </div>
                     </form>
@@ -56,7 +56,7 @@
 
             </div>
         </div>
-        <div class="screen">
+        <div class="screen" id="gameScreen">
             <header class="header-site">
                 <div class="container">
                     <div class="logo game-states" tabindex="0">
@@ -72,32 +72,26 @@
                 </div>
             </header>
             <div class="game-container">
-                <div class="game-bgr">
-                    <div class="essence player">
-                        <div class="state-info">You</div>
-                    </div>
-                    <div class="essence wall">
-                        <div class="essence caterpillar">
-                            <div class="state-info hill">Hill</div>
-                        </div>
-                    </div>
-                    <div class="essence hyena">
-                        <div class="state-info danger">Danger</div>
-                    </div>
+                <div class="game-bgr" id="camera">
                 </div>
             </div>
         </div>
         <div class="screen" id="loseScreen">
             <header class="header-site">
                 <div class="container">
-                    <div class="logo">
+                    <div class="logo game-states" tabindex="0">
                         <img src="Media/timon-pumbaa-wall-9.jpg" alt="Timon & Pumba" width="48">
-                        <span>Timon & Pumba Game</span>
+                        <span class="continue">amazan</span>
                     </div>
-                    <div class="user">Вы вошли, как Ramazan</div>
+                    <div class="user game-states">Вы вошли, как Ramazan</div>
                 </div>
             </header>
             <div class="container group-container">
+                <div class="section-title">
+                    <h3 class="heading">
+                        Результаты
+                    </h3>
+                </div>
                 <table class="table-site">
                     <thead>
                         <tr>
@@ -176,6 +170,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <button class="btn">Начать сначала</button>
             </div>
         </div>
     </div>
